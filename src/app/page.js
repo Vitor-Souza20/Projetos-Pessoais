@@ -1,95 +1,56 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import { FaGithub, FaInstagram } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main style={{ padding: "2rem", textAlign: "center" }}>
+      <Image
+        src="/minhafoto.jpg"
+        alt="Foto de perfil"
+        width={200}
+        height={200}
+        style={{ borderRadius: "50%", marginTop: "1rem" }}
+      />
+      <h1>Vitor Alves</h1>
+      <p style={{ marginTop: "1rem" }}>Programador Front-End Junior.</p>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
+      <div style={{ textAlign: "center" }}>
+        <Link href="/posts" className="button-link">
+          Ver a lista de posts
+        </Link>
+      </div>
+
+      <div
+        style={{
+          textAlign: "center",
+          display: "flex",
+          justifyContent: "center",
+          gap: "2rem",
+          marginTop: "2rem",
+        }}
+      >
         <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="https://github.com/Vitor-Souza20"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Github"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          <FaGithub size={32} style={{ color: "var(--primary-color)" }} />
         </a>
         <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="https://www.instagram.com/v.sssilva/"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Instagram"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
+          <FaInstagram size={32} style={{ color: "var(--primary-color)" }} />
         </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
+        <a href="vitor.souza@gmail.com" aria-label="Email">
+          <MdEmail size={32} style={{ color: "var(--primary-color)" }} />
         </a>
-      </footer>
-    </div>
+      </div>
+    </main>
   );
 }
